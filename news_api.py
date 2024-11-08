@@ -2,7 +2,7 @@ import time
 import streamlit as st
 from newsapi import NewsApiClient
 
-newsapi=NewsApiClient(api_key='ba889a8914344a208ea4d7db94664718')
+newsapi_=NewsApiClient(api_key='ba889a8914344a208ea4d7db94664718')
 st.subheader("Get top crime news 📰")
 col1,col2=st.columns(2)
 with col1:
@@ -14,7 +14,7 @@ with col2:
 if city=="" or news_type=="":
       st.markdown("i will fetch news for you")
 else:
-    all_articles=newsapi.get_everything(
+    all_articles=newsapi_.get_everything(
     q=f"{news_type} {city}",
     sort_by='relevancy',
     page_size=5,
